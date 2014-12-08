@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500italic' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+</head>
+<style>
+    #bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    }
+    #bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    }
+    #content {
+    position: relative;
+    }
+    #content {
+    font-size: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    }
+</style>
+<script>
+	var quotes = [
+        'good question',
+        'obviously',
+        'again',
+        'this is not the best approach',
+		'this is the worst possible approach',
+        'hmmmmm',
+        'does this output make sense for you',
+        'I have to fix PRODUCTION issues alone',
+        'registered chairs',
+        'let\'s doublecheck',
+        'let\'s go ahead',
+		'we are Volante developers',
+        'please send me a meeting invitation',
+		'please ping me after 2 o\'clock',
+		'quickly',
+		'what do you think of this flow',
+        'please enable debug info for the flow cartridge'
+	];
+	var colors = ['black', 'brown', 'chocolate', 'darkslateblue', 'red', 'firebrick', 'indigo', 'maroon'];
+    function changeQuote() {
+		var quote = quotes[Math.floor((Math.random() * quotes.length))];
+		var color = colors[Math.floor((Math.random() * colors.length))];
+		document.getElementById("content").innerHTML = quote;
+		document.getElementById("content").style.color = color;
+	};
+</script>
+<script>
+$(document).click(function() {
+$("#content").effect("pulsate", "slow");
+});
+</script>
+<body>
+<div id="bg">
+    <img src="background.jpg" alt="background">
+</div>
+<div id="content" style="cursor:pointer; align:center; text-align:center" onclick="changeQuote()">
+	&lt;let them quotes come&gt;
+</div>
+</body>
+</html>
